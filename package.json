@@ -1,0 +1,31 @@
+{
+  "name": "hoxly",
+  "version": "0.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scott-linenberger/hoxly.git"
+  },
+  "keywords": [
+    "Log",
+    "Logs",
+    "Logging",
+    "Logger",
+    "Logbone"
+  ],
+  "author": "Scott Linenberger",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/scott-linenberger/hoxly/issues"
+  },
+  "homepage": "https://github.com/scott-linenberger/hoxly#readme",
+  "devDependencies": {
+    "eslint": "^4.17.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "jasmine": "^3.0.0"
+  }
+}
