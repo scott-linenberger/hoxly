@@ -3,6 +3,7 @@ const SpectacleReporter = require('spectacle-reporter'); //eslint-disable-line
 
 const runner = new JASMINE();
 
+/* create Jasmine config */
 runner.loadConfig({
   random: false,
   spec_files: [
@@ -10,8 +11,8 @@ runner.loadConfig({
   ],
 });
 
-console.log(`current directory: ${process.cwd()}`);
-
+/* add SpectacleReporter */
 runner.addReporter(new SpectacleReporter());
 
+/* execute tests */
 runner.execute();
