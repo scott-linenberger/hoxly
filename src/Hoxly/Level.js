@@ -9,27 +9,27 @@ const LEVEL = {
   TRACE: {
     value: 5,
     name: 'TRACE',
-    color: '',
+    color: '\x1b[29m',
   },
   DEBUG: {
     value: 4,
     name: 'DEBUG',
-    color: '',
+    color: '\x1b[35m',
   },
   INFO: {
     value: 3,
     name: 'INFO',
-    color: '',
+    color: '\x1b[36m',
   },
   WARN: {
     value: 2,
     name: 'WARN',
-    color: '',
+    color: '\x1b[33m',
   },
   ERROR: {
     value: 1,
     name: 'ERROR',
-    color: '',
+    color: '\x1b[31m',
   },
   OFF: {
     value: 0,

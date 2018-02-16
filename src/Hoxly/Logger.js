@@ -1,4 +1,4 @@
-const LOG_LEVEL = require('./Level');
+const Level = require('./Level');
 
 class Logger {
 
@@ -6,7 +6,7 @@ class Logger {
     this.loggerName = loggerName;
 
     /* default logging level to TRACE if none provided */
-    this.logLevel = logLevel || LOG_LEVEL.TRACE;
+    this.logLevel = logLevel || Level.TRACE;
   }
 
   getTimestamp() {
@@ -22,52 +22,54 @@ class Logger {
       msg += ` ${currentArg}`;
     });
 
-    console.log(`${timestamp} - [${level.color}${this.loggerName}${level.color}][${level}]:${msg}`);
+    const { color } = Level[level];
+
+    console.log(`${timestamp} - [${color}${this.loggerName}\x1b[0m][${level}]:${msg}`);
   }
 
   trace(...args) {
     /* return if logging level too low */
-    if (this.logLevel.value < LOG_LEVEL.TRACE.value) {
+    if (this.logLevel.value < Level.TRACE.value) {
       return;
     }
 
-    this.logMessage(LOG_LEVEL.TRACE.name, args);
+    this.logMessage(Level.TRACE.name, args);
   }
 
   debug(...args) {
     /* return if logging level too low */
-    if (this.logLevel.value < LOG_LEVEL.DEBUG.value) {
+    if (this.logLevel.value < Level.DEBUG.value) {
       return;
     }
 
-    this.logMessage(LOG_LEVEL.DEBUG.name, args);
+    this.logMessage(Level.DEBUG.name, args);
   }
 
   info(...args) {
     /* return if logging level too low */
-    if (this.logLevel.value < LOG_LEVEL.INFO.value) {
+    if (this.logLevel.value < Level.INFO.value) {
       return;
     }
 
-    this.logMessage(LOG_LEVEL.INFO.name, args);
+    this.logMessage(Level.INFO.name, args);
   }
 
   warn(...args) {
     /* return if logging level too low */
-    if (this.logLevel.value < LOG_LEVEL.WARN.value) {
+    if (this.logLevel.value < Level.WARN.value) {
       return;
     }
 
-    this.logMessage(LOG_LEVEL.WARN.name, args);
+    this.logMessage(Level.WARN.name, args);
   }
 
   error(...args) {
     /* return if logging level too low */
-    if (this.logLevel.value < LOG_LEVEL.ERROR.value) {
+    if (this.logLevel.value < Level.ERROR.value) {
       return;
     }
 
-    this.logMessage(LOG_LEVEL.ERROR.name, args);
+    this.logMessage(Level.ERROR.name, args);
   }
 }
 
