@@ -1,35 +1,30 @@
-/**
- * @module Level
- */
+const Color = require('./Color');
 
-/**
-  * @typedef {Object} Level
-  */
 const LEVEL = {
   TRACE: {
     value: 5,
     name: 'TRACE',
-    color: '\x1b[29m',
+    color: Color.textWhite,
   },
   DEBUG: {
     value: 4,
     name: 'DEBUG',
-    color: '\x1b[35m',
+    color: Color.textMagenta,
   },
   INFO: {
     value: 3,
     name: 'INFO',
-    color: '\x1b[36m',
+    color: Color.textCyan,
   },
   WARN: {
     value: 2,
     name: 'WARN',
-    color: '\x1b[33m',
+    color: Color.textYellow,
   },
   ERROR: {
     value: 1,
     name: 'ERROR',
-    color: '\x1b[31m',
+    color: Color.textRed,
   },
   OFF: {
     value: 0,
